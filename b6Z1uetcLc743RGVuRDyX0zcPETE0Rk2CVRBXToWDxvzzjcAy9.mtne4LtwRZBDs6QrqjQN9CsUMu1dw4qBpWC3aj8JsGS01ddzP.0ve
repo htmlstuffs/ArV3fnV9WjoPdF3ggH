@@ -1,0 +1,37 @@
+#/#/ Useful BookMarklet Archives /#/#
+
+// Enable/Disable Admin Forced Extensions //
+javascript:void function(){"chrome.google.com"===location.hostname%26%26location.pathname.startsWith("/webstore")%3Fchrome.management.getAll(a=>{function b(a){chrome.webstorePrivate.getExtensionStatus(a.id,b=>{if("force_installed"===b){const b=prompt(`What do you want to do with ${a.name}%3F (enable/disable)`);var c=""===a.homepageUrl%3F`<b><a title="${a.description}">${a.name}</a></b>`:`<b><a href="${a.homepageUrl}" title="${a.description}">${a.name}</a></b>`,d="";"disable"===b.toLowerCase()%3F(chrome.management.setEnabled(a.id,!1),d+=`<p>Disabled ${c}</p>`):"enable"===b.toLowerCase()%3F(chrome.management.setEnabled(a.id,!0),d+=`<p>Enabled ${c}</p>`):alert("Invalid option, try again!"),document.body.innerHTML+=d}})}document.body.innerHTML="",document.write("\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2%3Ff...\" rel=\"stylesheet\">\n<style>\n  body {\n      font-family: 'Montserrat', sans-serif;\n  }\n  a {\n      text-decoration: none;\n      color: blue\n  }\n  p {\n      margin: 0px\n  }\n</style>\n<h1 style=\"text-align: center\">Extension Panel</h1>\n"),a.forEach(a=>b(a))}):(alert("Run this script again but while on this page"),location.href="https://chrome.google.com/webstore_")}();
+// Inspect Element For Computer And Mobile (Eruda) //
+
+javascript:(function () {     var script =  document.createElement('script');    script.src="//cdn.jsdelivr.net/npm/eruda";     document.body.appendChild(script);    script.onload = function () {         eruda.init()     } })();
+
+// AutoClicker //
+
+javascript:clicker:{"use strict";const{Number}=self;const milliseconds=Number.parseInt(self.prompt("How many seconds do you want to wait before clicking again?",%271%27),10);if(false===Number.isSafeInteger(milliseconds)){self.alert("Input was not an integer");break clicker;}let clientX=0,clientY=0;const{document}=self;self.setInterval(()=>{document.elementFromPoint(clientX,clientY)?.click?.();},milliseconds);document.addEventListener("mousemove",event=>{({clientX,clientY}=event);},{passive:true});}
+
+// Calculator //
+
+javascript:var evl,em,expr=prompt('Formula... (eg: 2*3 + 7/8)','');with(Math)try{evl=  parseFloat(eval(expr));if(isNaN(evl)) {throw Error('Not a number!');}void(prompt ('Result:'  ,evl));}catch(em){alert(em);}
+
+// Disguise Website //
+
+javascript:(function()%7Bconst t %3D document.title%0Adocument.write('<iframe src%3D"https%3A%2F%2Fwww.bing.com%2F" style%3D"border%3A0px %23ffffff none%3B" name%3D"myiFrame" scrolling%3D"yes" frameborder%3D"1" marginheight%3D"0px" marginwidth%3D"0px" height%3D"650px" width%3D"1350px" allowfullscreen><%2Fiframe>')%0Adocument.title %3D t%7D)()%3B
+
+// Hapara Tab Hider (Stops Teachers From Seeing The Tab) //
+
+javascript:(function()%7B(function()%20%7B%0A%20%20%20%20document.title%20%3D%20%22Dashboard%22%3B%0A%20%20%20%20var%20link%20%3D%20document.querySelector(%22link%5Brel*%3D%27icon%27%5D%22)%20%7C%7C%20document.createElement(%27link%27)%3B%0A%20%20%20%20link.type%20%3D%20%27image%2Fx-icon%27%3B%0A%20%20%20%20link.rel%20%3D%20%27shortcut%20icon%27%3B%0A%20%20%20%20link.href%20%3D%20%27https%3A%2F%2Faasd.instructure.com%2Ffavicon.ico%27%3B%0A%20%20%20%20document.getElementsByTagName(%27head%27)%5B0%5D.appendChild(link)%3B%0A%20%20%20%20alert(%27tab%20hidden!%20%F0%9F%A4%A3%27)%0A%7D)()%3B%7D)()%3B
+
+// Piano **Click The Url For The Code Because It's Too Long** //
+
+https://hastebin.com/raw/ibowoxaluy.js/
+
+// Snek (Press P For Snek) //
+
+javascript:for(Q=64,/*maze size*/m=b=Q*Q,a=[P=l=u=d=p=S=w=0],/*a=grid,P=playing,l=food-iters left (until tail starts moving),u=food age,d=dir,p=prev-dir,S=score,w=score to be added on,m=the score to be added if food was eaten now*/u=89,f=(h=j=t=(b+Q)/2)-1,/*f=food,h=head,j=prev-head,t=tail. set food to left so gets picked up immediately, setting initial snake size*/(B=(D=document).body).appendChild(x=D.createElement('p')),(X=x.style).position='fixed',X.left=X.top=0,X.background='#FFF',x.innerHTML='<p></p><canvas>',v=(s=x.childNodes)[0],(s=s[1]).width=s.height=Q*5,c=s.getContext('2d'),onkeydown=onblur=F=function(e,z){z? /*calc food*/a[f]?(w+=m,/*aging food score calc*/f=Math.random(l+=8)*(R=Q-2)*R|(u=0),F(f+=Q+1+(f/R|0)*2,z)/*random (re)calc food loc*/):F(f)/*draw food*/:e<0?( /*iter*/l?--l:(y=t,t=a[t]-2,F(y)),/*set tail*/S+=(w*=.8)/4,/*pretty score up*/m=999/(u+++10),/*age food a bit*/a[h+=[-1,-Q,1,Q][d=p]]?/*collision detect*/B.removeChild(x,alert('Game Over')):(F(h),/*draw head*/F(e,j=h),/*calc food*/v.innerHTML=P?(setTimeout(F,50,e,0),S|0):'Press P')/*next iter*/):-e?(/*draw (+recalc sqr)*/y=(a[e]=e<Q|e>=Q*Q-Q|/*tb walls*/!(e%Q)|e%Q==Q-1|/*lr walls*/(e==h)*2)/*snake head*/+(e==f),e==h&&(a[j]=2+h),/*snake chain*/c.fillStyle='hsl('+!a[e]*99+','+m*2+'%,'+y*50+'%)',/*color calc*/c.fillRect(e%Q*5,(e/Q|0)*5,5,5)):/*keyinput*/isNaN(y=e.keyCode-37)|y==43?(P=y&&!P)&&F(-1)/*pause*/:p=!P|y&-4|!(y^2^d)?/*arrow keys&&not directly opposite*/p:y;return!1};--b;F(b));/*init grid*/void F(-1)/*dummy update*/
+
+//  Translate Bypass  //
+
+javascript:void(open('https://translate.google.co.in/translate?hl=en&sl=sq&tl=en&u=%27+location.href));
+
+//  //
